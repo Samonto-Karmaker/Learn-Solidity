@@ -4,7 +4,7 @@ pragma solidity ^0.8.8; // Sets the minimum Solidity version to use in the contr
 contract SimpleStorage {
     uint256 num;
 
-    // struct -> JS objects
+    // struct -> JS objects (Only data, no methods)
     struct People {
         uint256 age;
         string name;
@@ -19,6 +19,11 @@ contract SimpleStorage {
 
     // Static array with max length 3
     // uint[3] public scores;
+
+    // mapping is like a Python Dictionary or Java Map
+    // used for quick lookups
+    // doesn't support iteration
+    mapping (string => uint256) public nameToAge;
 
     function store(uint256 _num) public {
         num = _num;
@@ -36,5 +41,6 @@ contract SimpleStorage {
     // costs less gas than "storage"
     function addPeople(uint _age, string memory _name) public {
         people.push(People(_age, _name));
+        nameToAge[_name] = _age;
     }
 }

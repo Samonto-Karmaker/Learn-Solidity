@@ -26,6 +26,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToAge",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
@@ -120,11 +139,11 @@
 	},
 	"sources": {
 		"contracts/SimpleStorage.sol": {
-			"keccak256": "0x4122c44d9e24fceaf918d69b9bff3533aceaafa4c1b9d71abf2c04105daccda4",
+			"keccak256": "0x6f427df8702c686b28f262a7e711cf495a1da6c8415b66d025b78d4d9b20e533",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5846c4bbae76bee9e36e6c7e09d9ef922cf2143f83ecea42976840f5fc210853",
-				"dweb:/ipfs/QmfSf6mEFiUf6v7hLtne8w32wNtkaJ2hYvE5gxmEx6qWEk"
+				"bzz-raw://103acae253675a24963f8068476c5b009060938f3ff91c94ab5eeef454af3586",
+				"dweb:/ipfs/QmX5mTthyvRp8VhHyADLigAuyJ37aovSXYgdVxExsy7sQd"
 			]
 		}
 	},
