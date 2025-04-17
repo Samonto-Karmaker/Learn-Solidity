@@ -25,7 +25,8 @@ contract SimpleStorage {
     // doesn't support iteration
     mapping (string => uint256) public nameToAge;
 
-    function store(uint256 _num) public {
+    // virtual -> Now this function can be overridden by a child contract
+    function store(uint256 _num) public virtual {
         num = _num;
     }
 
