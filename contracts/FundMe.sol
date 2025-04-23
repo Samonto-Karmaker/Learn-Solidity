@@ -41,4 +41,17 @@ contract FundMe {
         (bool success, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(success, "Failed to withdraw money");
     }
+
+    // What if users try to fund us without calling the fund function?
+    // e.g. Sending Ether through MetaMask?
+    // To handle this issue, we need a receive function
+    receive() external payable { 
+        fund();
+    }
+
+    // What if a user sends data or makes a mistake in the function name?
+    // Fallback catches such unmatched calls and still funds the contract
+    fallback() external payable {
+        fund();
+    }
 }
