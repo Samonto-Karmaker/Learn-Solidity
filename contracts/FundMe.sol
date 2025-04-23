@@ -7,9 +7,19 @@ contract FundMe {
     using PriceConverter for uint256;
 
     uint256 public constant MINIMUM_FUND_USD = 1 * 1e18;
+    address public owner;
 
     mapping(address => uint256) public addressToAmountFunded;
     address[] public funders;
+
+    constructor() {
+        owner = msg.sender; // Now, owner is one who deployed the contract
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the contract owner can do that!"); 
+        _;
+    }
 
     function fund() public payable {
         require(msg.value.getConversionRate() >= MINIMUM_FUND_USD, "Amount too low");
@@ -17,7 +27,7 @@ contract FundMe {
         funders.push(msg.sender);
     }
 
-    function withdraw() public {
+    function withdraw() public onlyOwner {
         for (uint256 i = 0; i < funders.length; i++) {
             address funder = funders[i];
             addressToAmountFunded[funder] = 0;
