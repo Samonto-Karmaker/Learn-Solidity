@@ -17,5 +17,14 @@ contract FundMe {
         funders.push(msg.sender);
     }
 
-    // function withdraw() {}
+    function withdraw() public {
+        for (uint256 i = 0; i < funders.length; i++) {
+            address funder = funders[i];
+            addressToAmountFunded[funder] = 0;
+        }
+        funders = new address[](0);
+
+        (bool success, ) = payable(msg.sender).call{value: address(this).balance}("");
+        require(success, "Failed to withdraw money");
+    }
 }
