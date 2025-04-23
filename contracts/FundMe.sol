@@ -7,17 +7,17 @@ contract FundMe {
     using PriceConverter for uint256;
 
     uint256 public constant MINIMUM_FUND_USD = 1 * 1e18;
-    address public owner;
+    address public immutable i_owner;
 
     mapping(address => uint256) public addressToAmountFunded;
     address[] public funders;
 
     constructor() {
-        owner = msg.sender; // Now, owner is one who deployed the contract
+        i_owner = msg.sender; // Now, owner is one who deployed the contract
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "Only the contract owner can do that!"); 
+        require(msg.sender == i_owner, "Only the contract owner can do that!"); 
         _;
     }
 
