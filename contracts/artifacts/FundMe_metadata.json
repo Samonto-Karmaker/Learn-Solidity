@@ -12,6 +12,11 @@
 			},
 			{
 				"inputs": [],
+				"name": "NotOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
 				"name": "MINIMUM_FUND_USD",
 				"outputs": [
 					{
@@ -125,11 +130,11 @@
 			]
 		},
 		"contracts/FundMe.sol": {
-			"keccak256": "0xc532b51d4d7758981207434d7b2804d23feabd4d6125f87613ac1f4a569d29ee",
+			"keccak256": "0xbcb9ef4ded3cb69129cb5f3b9fb5bdf2748299ad1ade1b3a9a5c9a752e756fc8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://09ee2373d25bdca42bc4546bdac4641fde127435d3b61cc5219a12ca58cce9b8",
-				"dweb:/ipfs/QmXHHHGaKjETUTyUEAHPWMvWxobmTXu4X9FujmvS8HYzuW"
+				"bzz-raw://6215d84f48a56bf740b59e81e470e6715704179b2487b68007cc01d8b8999c06",
+				"dweb:/ipfs/QmYd7w1XgvViLefLyJQecSHEBkSQJ5EMxqLWSsupu9AxfN"
 			]
 		},
 		"contracts/PriceConverter.sol": {
